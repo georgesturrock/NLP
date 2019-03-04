@@ -11796,7 +11796,7 @@ c.  You probably will have too many unknown words, owing to proper names of char
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">platform</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Platform:&quot;</span><span class="p">,</span> <span class="n">platform</span><span class="o">.</span><span class="n">platform</span><span class="p">())</span>
@@ -11816,6 +11816,7 @@ c.  You probably will have too many unknown words, owing to proper names of char
 <span class="c1">#Python Basics</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Numpy Version:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pandas Version:&quot;</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span><span class="p">;</span>
 
 <span class="c1">#NLP</span>
 <span class="kn">import</span> <span class="nn">nltk</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NLTK Version:&quot;</span><span class="p">,</span> <span class="n">nltk</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
@@ -11879,7 +11880,7 @@ Pattern Version: 3.6
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Rocky movie list.  Two links for each movie to assure positive and negative reviews are captured.  </span>
@@ -11915,7 +11916,7 @@ Pattern Version: 3.6
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">reviewUrls</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
@@ -11947,7 +11948,7 @@ Pattern Version: 3.6
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfRockyReviews</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
@@ -11963,7 +11964,7 @@ Pattern Version: 3.6
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[5]:</div>
+<div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -11994,12 +11995,12 @@ Pattern Version: 3.6
     <tr>
       <th>0</th>
       <td>Rocky</td>
-      <td>http:/review/rw4247059/?ref_=tt_urv</td>
+      <td>http:/review/rw0149538/?ref_=tt_urv</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Rocky</td>
-      <td>http:/review/rw0149538/?ref_=tt_urv</td>
+      <td>http:/review/rw4247059/?ref_=tt_urv</td>
     </tr>
     <tr>
       <th>2</th>
@@ -12009,12 +12010,12 @@ Pattern Version: 3.6
     <tr>
       <th>3</th>
       <td>Rocky</td>
-      <td>http:/review/rw1979442/?ref_=tt_urv</td>
+      <td>http:/review/rw3451942/?ref_=tt_urv</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Rocky</td>
-      <td>http:/review/rw3647093/?ref_=tt_urv</td>
+      <td>http:/review/rw2406266/?ref_=tt_urv</td>
     </tr>
   </tbody>
 </table>
@@ -12038,7 +12039,7 @@ Pattern Version: 3.6
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfReviewDetails</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Movie&#39;</span><span class="p">,</span> <span class="s1">&#39;ReviewUrl&#39;</span><span class="p">,</span> <span class="s1">&#39;ReviewDate&#39;</span><span class="p">,</span> <span class="s1">&#39;ReviewTitle&#39;</span><span class="p">,</span> <span class="s1">&#39;Review&#39;</span><span class="p">,</span> <span class="s1">&#39;Rating&#39;</span><span class="p">,</span> 
@@ -12077,7 +12078,7 @@ Pattern Version: 3.6
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[6]:</div>
+<div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -12113,20 +12114,20 @@ Pattern Version: 3.6
     <tr>
       <th>0</th>
       <td>Rocky</td>
-      <td>http:/review/rw4247059/?ref_=tt_urv</td>
-      <td>2018-07-21</td>
-      <td>Rubbish</td>
-      <td>The fight scenes are pathetic and the acting i...</td>
+      <td>http:/review/rw0149538/?ref_=tt_urv</td>
+      <td>1999-11-25</td>
+      <td>Dumbest, Most Cornball Film Ever Made</td>
+      <td>I still remember my initial outrage that this ...</td>
       <td>1</td>
       <td>English</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Rocky</td>
-      <td>http:/review/rw0149538/?ref_=tt_urv</td>
-      <td>1999-11-25</td>
-      <td>Dumbest, Most Cornball Film Ever Made</td>
-      <td>I still remember my initial outrage that this ...</td>
+      <td>http:/review/rw4247059/?ref_=tt_urv</td>
+      <td>2018-07-21</td>
+      <td>Rubbish</td>
+      <td>The fight scenes are pathetic and the acting i...</td>
       <td>1</td>
       <td>English</td>
     </tr>
@@ -12143,26 +12144,87 @@ Pattern Version: 3.6
     <tr>
       <th>3</th>
       <td>Rocky</td>
-      <td>http:/review/rw1979442/?ref_=tt_urv</td>
-      <td>2008-11-22</td>
-      <td>The most overrated movie of all time</td>
-      <td>I went to see this movie when it came out. I h...</td>
+      <td>http:/review/rw3451942/?ref_=tt_urv</td>
+      <td>2016-04-15</td>
+      <td>Hate me if you want but I didn't like this film</td>
+      <td>I'm going to come out and say it. I didn't lik...</td>
       <td>3</td>
       <td>English</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Rocky</td>
-      <td>http:/review/rw3647093/?ref_=tt_urv</td>
-      <td>2017-02-24</td>
-      <td>Eh....it was alright.</td>
-      <td>I didn't particularly like this movie. Dimwitt...</td>
+      <td>http:/review/rw2406266/?ref_=tt_urv</td>
+      <td>2011-03-30</td>
+      <td>I can't believe the script was made into a mov...</td>
+      <td>I was told by many that Rocky is a beautiful m...</td>
       <td>3</td>
       <td>English</td>
     </tr>
   </tbody>
 </table>
 </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The bar plot below shows movie review ratings for the reviews collected in the prior step. The original "Rocky" is widely considered the best of the "Rocky" series.  It won multiple Oscars and introduced "Steady-Cam" technology to the movie world.  However, the sample of user reviews collected tell a different story.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plotdf</span> <span class="o">=</span> <span class="n">dfReviewDetails</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ReviewDate&#39;</span><span class="p">])</span>
+<span class="n">plotdf</span><span class="o">.</span><span class="n">Rating</span> <span class="o">=</span> <span class="n">plotdf</span><span class="o">.</span><span class="n">Rating</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span>
+<span class="n">plotdf</span><span class="o">.</span><span class="n">ReviewDate</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">plotdf</span><span class="o">.</span><span class="n">ReviewDate</span><span class="p">)</span>
+<span class="n">plotdf</span> <span class="o">=</span> <span class="n">plotdf</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Movie&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Movie&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Rating&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">plotdf</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Rating&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[25]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x202bd711e10&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
 </div>
 
 </div>
