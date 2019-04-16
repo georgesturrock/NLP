@@ -13116,8 +13116,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Topic-Modeling-IMDB-Movie-Reviews">Topic Modeling IMDB Movie Reviews<a class="anchor-link" href="#Topic-Modeling-IMDB-Movie-Reviews">&#182;</a></h2><h3 id="DS-7337---Natural-Laguage-Processing---FInal-Project">DS 7337 - Natural Laguage Processing - FInal Project<a class="anchor-link" href="#DS-7337---Natural-Laguage-Processing---FInal-Project">&#182;</a></h3><h4 id="George-C.-Sturrock">George C. Sturrock<a class="anchor-link" href="#George-C.-Sturrock">&#182;</a></h4><h5 id="April-14,-2019">April 14, 2019<a class="anchor-link" href="#April-14,-2019">&#182;</a></h5><p>In the final project for Natural Language Processing, topic modelling of the IMDB movies reviews collected in prior assignments will be the base data set.  The movie review data is automatically scrapped from IMDB.  The data will then be evaluated using Latent Dirichlet Allocation (LDA) 
-to produce the topic models.  This project will focus on different data preparation techniques to produce topic models.  Using the raw review text, lemmatized review text, named entities, and hypernyms mixed with named entities will be explored for comparison.</p>
+<h2 id="Topic-Modeling-IMDB-Movie-Reviews">Topic Modeling IMDB Movie Reviews<a class="anchor-link" href="#Topic-Modeling-IMDB-Movie-Reviews">&#182;</a></h2><h3 id="DS-7337---Natural-Laguage-Processing---FInal-Project">DS 7337 - Natural Laguage Processing - FInal Project<a class="anchor-link" href="#DS-7337---Natural-Laguage-Processing---FInal-Project">&#182;</a></h3><h4 id="George-C.-Sturrock">George C. Sturrock<a class="anchor-link" href="#George-C.-Sturrock">&#182;</a></h4><h5 id="April-14,-2019">April 14, 2019<a class="anchor-link" href="#April-14,-2019">&#182;</a></h5><p>In the final project for Natural Language Processing, topic modelling of the IMDB movies reviews collected in prior assignments will be the base data set.  The base movies for this study will be Rocky, Rocky 3 and Rocky 5.  The movie review data is automatically scrapped from IMDB.  The data will then be evaluated using Latent Dirichlet Allocation (LDA) to produce the topic models.  This project will focus on different data engineering techniques to produce topic models.  Using the raw review text, lemmatized review text, named entities, and hypernyms mixed with named entities will be explored for comparison.  The raw review text model will use uncleansed text fed directly into the count vectorizer for LDA modeling.  The remaining data engineering techniques will tokenize, part-of-speach tag, remove stop words, and remove punctuation prior to count vectorizing and LDA modeling.  There are several challenges when topic modeling these three movies.  Character and plot recylcling can make differentiating the three movies a difficult exercise.  The results of each technique will be presented and summarized.</p>
 <h5 id="Resources">Resources<a class="anchor-link" href="#Resources">&#182;</a></h5><p><a href="https://www.machinelearningplus.com/nlp/topic-modeling-python-sklearn-examples/">https://www.machinelearningplus.com/nlp/topic-modeling-python-sklearn-examples/</a></p>
 <h4 id="Import-Libraries">Import Libraries<a class="anchor-link" href="#Import-Libraries">&#182;</a></h4>
 </div>
@@ -13563,7 +13562,7 @@ pyLDAvis Versoin: 2.1.2
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Data-Engineering">Data Engineering<a class="anchor-link" href="#Data-Engineering">&#182;</a></h3><p>The data engineering section contains the methods used to cleanse, process, and attach lists to the dfReviewDetails dataframe.</p>
-<h4 id="Create-Additional-Features-for-Topic-Modeling">Create Additional Features for Topic Modeling<a class="anchor-link" href="#Create-Additional-Features-for-Topic-Modeling">&#182;</a></h4><p>The code chunk shown below performs the steps needed to strip punctuation from the raw text reviews.  Then, three different lists are populated to hold named entities, hypernyms, and lemmatized forms of the raw review text.  The lists are then strung back together per row and added to the dfReviewDetails dataframe.</p>
+<h4 id="Create-Additional-Features-for-Topic-Modeling">Create Additional Features for Topic Modeling<a class="anchor-link" href="#Create-Additional-Features-for-Topic-Modeling">&#182;</a></h4><p>The code chunk shown below performs the steps needed to strip punctuation from the raw text reviews.  The code begins by removing punctuation and stop words.  Then, three different lists are populated to hold named entities, hypernyms, and lemmatized forms of the raw review text.  The lists are then strung back together per row and added to the dfReviewDetails dataframe.</p>
 
 </div>
 </div>
@@ -13646,6 +13645,14 @@ C:\Anaconda\lib\site-packages\pattern\text\__init__.py:2127: DeprecationWarning:
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The named entity recognitition, lemmatized, and hypernym plus named entity lists are added to the main review dataframe.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -13806,28 +13813,6 @@ C:\Anaconda\lib\site-packages\pattern\text\__init__.py:2127: DeprecationWarning:
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfReviewDetails</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="s2">&quot;./dfReviewDetailsRocky5.pkl&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Vectorize-Reviews">Vectorize Reviews<a class="anchor-link" href="#Vectorize-Reviews">&#182;</a></h4><p>Latent Dirichlet Allocation requires a vectorized term matrix fit its model.  Sklearn's count vectorizer will be used for this step.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#tfidfVectorizer = TfidfVectorizer(max_df=1, min_df=0, stop_words=&#39;english&#39;, use_idf=True, ngram_range=(1,3))</span>
-<span class="c1">#countVectorizer = CountVectorizer(analyzer=&#39;word&#39;, min_df=7, stop_words=&#39;english&#39;, lowercase=True)</span>
 </pre></div>
 
     </div>
@@ -14424,7 +14409,15 @@ if(typeof(LDAvis) !== "undefined"){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Clustering-Topic-Model">Clustering Topic Model<a class="anchor-link" href="#Clustering-Topic-Model">&#182;</a></h3><p>The topic model for the hypernym and named entity topic model can be represented as a traditional KMeans clusters.  Three KMeans clusters are plotted below.  Three clusters are chosen for plotting as there are three movies in the dataset.  Further analysis would be needed to determine the origin of each clustered point.</p>
+<h3 id="Topic-Model-Summary">Topic Model Summary<a class="anchor-link" href="#Topic-Model-Summary">&#182;</a></h3><p>The named entity and hypernym plus named entity based LDA models produced the best results in terms of visual inspection, balance of topic models, and log likelihood per feature scoring.  The log likelihood and log likelihood/feature scores can be manually influenced by the number of features in the shape of the count vectorized matrix.  However, they do offer a numerical means of differentiating the different approaches.  The named entity model produces the best results when considering visual inspection, topic balance, and numerical scoring.  The obvious difference between Rocky (Apollo Creed), Rocky 3 (Clubber Lang), and Rocky 5 (Tommy Gunn) are the main protagonist characters.  Named entity recognition does a decent job of creating topics based on Mr T's Clubber Lang character and Tommy Morrison's Tommy Gunn character.  However, Apollo Creed is a main character in both Rocky and Rocky 3.  The hypernym plus named entity approach likely produces results more applicable to a broader range of movies.  By combining actor, character, and abstracted token data, this approach is capable of a layer of depth and insight which using named entities only cannot rival.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Extra-Work:--Visualize-Topic-Model-Clusters">Extra Work:  Visualize Topic Model Clusters<a class="anchor-link" href="#Extra-Work:--Visualize-Topic-Model-Clusters">&#182;</a></h3><p>The topic model for the hypernym and named entity topic model can be represented as a traditional KMeans clusters.  Three KMeans clusters are plotted below.  Three clusters are chosen for plotting as there are three movies in the dataset.  Further analysis would be needed to determine the origin of each clustered point.</p>
 
 </div>
 </div>
@@ -14474,19 +14467,6 @@ if(typeof(LDAvis) !== "undefined"){
 
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
 </div>
 </div>
 
